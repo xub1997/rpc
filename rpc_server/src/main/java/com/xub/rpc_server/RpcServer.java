@@ -67,13 +67,13 @@ public class RpcServer {
                 log.info("get request = {}", request);
                 ServiceInstance serviceInstance = serviceManager.lookup(request);
                 Object returnValue = serviceInvoker.invoke(serviceInstance, request);
-                response = Response.success("操作成功",returnValue);
+                response = Response.success("操作成功", returnValue);
             } catch (IOException e) {
                 log.warn(e.getMessage(), e);
                 response = Response.fail(new StringBuilder().append("RpcServer got error:")
                         .append(e.getClass().getName())
                         .append(e.getMessage()).toString());
-            }finally {
+            } finally {
                 byte[] outBytes = encoder.encode(response);
                 try {
                     toResp.write(outBytes);

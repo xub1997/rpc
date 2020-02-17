@@ -38,8 +38,6 @@ public class ReflectUtil {
      * @return
      */
     public static Method[] getPublicMethods(Class clazz) {
-//        Method[] methods = clazz.getMethods();
-//        return methods;
         Method[] declaredMethods = clazz.getDeclaredMethods();
         List<Method> methodList = new ArrayList<>();
         for (Method declaredMethod : declaredMethods) {

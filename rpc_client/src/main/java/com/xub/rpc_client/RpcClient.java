@@ -61,7 +61,8 @@ public class RpcClient {
     }
 
     /**
-     * 获取远程代理
+     * Java 中的动态代理，实际上指的就是反射包java.lang.reflect下的 类 Proxy
+     * 获取远程代理（通过动态代理的方式，在RomoteInvoker调用invoke方法获得相应方法的结果）
      * @param clazz
      * @param <T>
      * @return

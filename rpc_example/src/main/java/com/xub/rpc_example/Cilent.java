@@ -13,6 +13,7 @@ public class Cilent {
 
     public static void main(String[] args) {
         RpcClient client = new RpcClient();
+        //通过JDK动态代理的方式进行获取（在获取结果的时候通过http获取结果实现rpc效果）
         CalcService service = client.getProxy(CalcService.class);
         int add = service.add(1, 2);
         int minus = service.minus(10, 4);
